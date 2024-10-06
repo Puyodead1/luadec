@@ -1,6 +1,6 @@
 # makefile for Lua decompiler
 
-LUAVER=5.1
+LUAVER=5.3
 LUASRC=../lua-$(LUAVER)/src
 LIBDIR=$(LUASRC)
 BINDIR=../bin
@@ -75,10 +75,10 @@ allopcodes_luac.h: allopcodes.luac
 	$(BIN2C) allopcodes.luac allopcodes_luac > allopcodes_luac.h
 
 LUNDUMP:=
-ifeq ($(LUAVER),5.1)
-	LUNDUMP:=lundump-5.1.o
+ifeq ($(LUAVER),5.3)
+	LUNDUMP:=lundump-5.3.o
 endif
-lundump-5.1.o: lundump-5.1.c
+lundump-5.3.o: lundump-5.3.c
 luaopswap.o: luaopswap.c allopcodes_lua.h allopcodes_luac.h
 luaopswap: luaopswap.o $(LUNDUMP) $(LIBDIR)/liblua.a
 	$(CC) -o $@ $(LDFLAGS) $^ $(LIBS)

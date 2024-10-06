@@ -7,7 +7,3 @@
 [submodule "memwatch"]
 	path = memwatch
 	url = https://github.com/viruscamp/memwatch
-[submodule "lua-5.3"]
-	path = lua-5.3
-	url = https://github.com/viruscamp/lua5
-	branch = 5.3
